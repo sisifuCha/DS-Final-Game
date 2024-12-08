@@ -17,6 +17,7 @@ void MainWindow::on_signInButton_clicked()
 {
     //弹出窗口让玩家登录————syf
     signInDialog = new SignInDialog(this);
+    qDebug()<<"test";
     signInDialog->show();
     //输入用户名以及密码，  打开文件    匹配用户名，如果用户名一样，那么匹配密码是否正确
     //如果用户名不一样，那么根据用户名和密码创建新账户

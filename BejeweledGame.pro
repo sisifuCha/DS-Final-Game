@@ -15,14 +15,16 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     rankdlg.cpp \
-    signindlg.cpp
+    signindlg.cpp \
+    test.cpp
 
 HEADERS += \
     Setgamedlg.h \
     branchtest.h \
     mainwindow.h \
     rankdlg.h \
-    signindlg.h
+    signindlg.h \
+    test.h
 
 FORMS += \
     Setgamedlg.ui \
