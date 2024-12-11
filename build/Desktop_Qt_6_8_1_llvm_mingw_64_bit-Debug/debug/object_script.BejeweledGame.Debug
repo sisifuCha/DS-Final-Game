@@ -1,0 +1,13 @@
+debug/Setgamedlg.o
+debug/cgamedlg.o
+debug/gamelogic.o
+debug/main.o
+debug/mainwindow.o
+debug/rankdlg.o
+debug/signindlg.o
+debug/qrc_resouce.o
+debug/moc_Setgamedlg.o
+debug/moc_cgamedlg.o
+debug/moc_mainwindow.o
+debug/moc_rankdlg.o
+debug/moc_signindlg.o

@@ -36,6 +36,8 @@ CGameDlg::CGameDlg(QWidget *parent,int dimension,int numOfStone)
             qDebug()<<temp[i][j];
         }
     }*/
+    /*****************在matrix里面添加元素***************/
+    /*****************在matrix里面添加元素***************/
     for(int i=0;i<dimension;i++){
         matrix[i].resize(dimension);
         //qDebug()<<"GameWidget:测试点4";
@@ -43,6 +45,8 @@ CGameDlg::CGameDlg(QWidget *parent,int dimension,int numOfStone)
         for(int j=0;j<dimension;j++){
             //qDebug()<<"GameWidget:测试点5";
             matrix[i][j].category=temp[i][j];
+            matrix[i][j].isClicked=false;
+            matrix[i][j].isEmpty=false;
             //qDebug()<<"GameWidget:测试点6";
             QPixmap pmap;
 
@@ -60,7 +64,6 @@ CGameDlg::CGameDlg(QWidget *parent,int dimension,int numOfStone)
         //qDebug()<<"GameWidget:测试点8";
         //qDebug()<<Qt::endl;
     }
-
     /*——————————消子和交换初始化——————————*/
     swapStones.resize(2);
     swapStones[0].category=0;swapStones[0].picItem=nullptr;//存放鼠标左键点击的引用
@@ -75,6 +78,8 @@ CGameDlg::~CGameDlg()
 }
 void CGameDlg::mousePressEvent(QMouseEvent* event) {
     QPointF scenePos = ui->graphicsView->mapToScene(event->pos());
+    scenePos.setX(scenePos.x()-30);//此处修改得到相对graphicsView的坐标，虽然我不知道为什么上一行出了问题
+    scenePos.setY(scenePos.y()-80);//但修改以后矩阵索引打印出来是对的
     qDebug() << "Mouse clicked at scene position:" << scenePos;
 
     //判断鼠标单击是否在scene里面
@@ -86,14 +91,102 @@ void CGameDlg::mousePressEvent(QMouseEvent* event) {
     int x = static_cast<int>(scenePos.x()) / 50;
     int y = static_cast<int>(scenePos.y()) / 50;
 
-    // 确保点击的位置在矩阵范围内
+    // 确保点击的位置在矩阵范围内,被点击的mitrix[x][y]的isChosen为true，已经为true再点击一次isChosen为false;
     if (x >= 0 && x < dimension && y >= 0 && y < dimension) {
         if(event->button() == Qt::LeftButton){
             swapStones[0]=matrix[x][y];
             qDebug() << "CGameDlg::onGraphicsViewClicked : 鼠标左键点击了" << x << y;
+            //看这个坐标的stone是否非空（即是否被削掉了）
+            if(matrix[x][y].isEmpty) return;
+            //如果非空，判断它是否被点击过，然后视情况更改isClicked属性
+            if(matrix[x][y].isClicked==true){
+                matrix[x][y].isClicked=false;
+                //被选中个数减1
+                ClickedTimes--;
+            }
+            else
+            {
+                //如果没被选过，则看场上被选中的是否小于2
+                if(ClickedTimes<2){
+                matrix[x][y].isClicked=true;
+                //被选中个数数加1
+                ClickedTimes++;
+                }
+                else return;
+            }
+            //接着判断其周围有无被点击的stone，有则与其交换图片,然后给场景贴新的图（不能用刷新!!!!!!!!!）
+            isClickedAround(x,y);
+
         }else if(event->button() == Qt::RightButton){
             swapStones[1]=matrix[x][y];
             qDebug() << "CGameDlg::onGraphicsViewClicked : 鼠标右键点击了" << x << y;
         }
     }
 }
+
+void CGameDlg::isClickedAround(int x, int y)
+{
+    if(x+1<dimension&&matrix[x+1][y].isClicked){
+        matrix[x][y].isClicked=false;
+        matrix[x+1][y].isClicked=false;
+        Stone stone;
+        stone=matrix[x][y];
+        matrix[x][y]=matrix[x+1][y];
+        matrix[x+1][y]=stone;
+        matrix[x][y].picItem->setPos(x*50,y*50);
+        matrix[x+1][y].picItem->setPos((x+1)*50,y*50);
+        putStone(x,y);
+        putStone(x+1,y);
+        ClickedTimes=0;
+    }
+    if(y+1<dimension&&matrix[x][y+1].isClicked){
+        Stone stone;
+        matrix[x][y].isClicked=false;
+        matrix[x][y+1].isClicked=false;
+        stone=matrix[x][y];
+        matrix[x][y]=matrix[x][y+1];
+        matrix[x][y+1]=stone;
+        matrix[x][y].picItem->setPos(x*50,y*50);
+        matrix[x][y+1].picItem->setPos(x*50,(1+y)*50);
+        putStone(x,y);
+        putStone(x,y+1);
+        ClickedTimes=0;
+    }
+    if(x-1>=0&&matrix[x-1][y].isClicked){
+        matrix[x][y].isClicked=false;
+        matrix[x-1][y].isClicked=false;
+        Stone stone;
+        stone=matrix[x][y];
+        matrix[x][y]=matrix[x-1][y];
+        matrix[x-1][y]=stone;
+        matrix[x][y].picItem->setPos(x*50,y*50);
+        matrix[x-1][y].picItem->setPos((x-1)*50,y*50);
+        putStone(x-1,y);
+        putStone(x,y);
+        ClickedTimes=0;
+    }
+    if(y-1>=0&&matrix[x][y-1].isClicked){
+        matrix[x][y].isClicked=false;
+        matrix[x][y-1].isClicked=false;
+        Stone stone;
+        stone=matrix[x][y];
+        matrix[x][y]=matrix[x][y-1];
+        matrix[x][y-1]=stone;
+        matrix[x][y].picItem->setPos(x*50,y*50);
+        matrix[x][y-1].picItem->setPos(x*50,(y-1)*50);
+        putStone(x,y-1);
+        putStone(x,y);
+        ClickedTimes=0;
+    }
+}
+void CGameDlg::putStone(int x, int y)
+{
+    ui->graphicsView->scene()->addItem(matrix[x][y].picItem);
+    ui->graphicsView->scene()->update();
+}
+
+void CGameDlg::on_SwapButton_clicked()//交换按钮
+{
+
+}
+

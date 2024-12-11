@@ -9,7 +9,10 @@
 typedef struct{
     int category;//宝石种类
     QGraphicsPixmapItem* picItem;
+    bool isClicked;
+    bool isEmpty;
 }Stone;//
+
 namespace Ui {
 class CGameDlg;
 }
@@ -36,8 +39,13 @@ public:
     /*——————————判断相邻，消子————————————*/
     //由stone1和stone2储存交换信息
     QVector<Stone> swapStones;
+    int ClickedTimes=0;
 protected:
     void mousePressEvent(QMouseEvent* event) override;
+    void isClickedAround(int x,int y);
+    void putStone(int x,int y);
+private slots:
+    void on_SwapButton_clicked();
 
 private:
     Ui::CGameDlg *ui;
