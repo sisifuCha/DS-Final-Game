@@ -26,7 +26,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置游戏模式&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tabWidgetPage1">
     <property name="contextMenuPolicy">
@@ -35,11 +35,11 @@
     <attribute name="title">
      <string>游戏模式选择</string>
     </attribute>
-    <widget class="QRadioButton" name="modeChoseBut">
+    <widget class="QRadioButton" name="modeChoseButton">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>40</y>
+       <y>20</y>
        <width>81</width>
        <height>24</height>
       </rect>
@@ -48,17 +48,83 @@
       <string>常规模式</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_2">
+    <widget class="QRadioButton" name="modeChoseButton_2">
      <property name="geometry">
       <rect>
        <x>170</x>
-       <y>40</y>
+       <y>20</y>
        <width>81</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
       <string>平衡模式</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>63</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>难度选择</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="chooseDimensionBox">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>80</y>
+       <width>80</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>8×8</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>10×10</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="chooseStoneNumBox">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>80</y>
+       <width>80</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>80</y>
+       <width>63</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>难度选择</string>
      </property>
     </widget>
    </widget>
@@ -92,7 +158,7 @@
       <string>使用自定义音乐</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="fileChooseEdit">
+    <widget class="QLineEdit" name="musicFileChooseEdit">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -146,7 +212,7 @@
     <attribute name="title">
      <string>背景图片设置</string>
     </attribute>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="picFileChooseEdit">
      <property name="geometry">
       <rect>
        <x>50</x>

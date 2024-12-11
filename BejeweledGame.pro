@@ -11,23 +11,24 @@ CONFIG += c++17
 
 SOURCES += \
     Setgamedlg.cpp \
-    branchtest.cpp \
+    cgamedlg.cpp \
+    gamelogic.cpp \
     main.cpp \
     mainwindow.cpp \
     rankdlg.cpp \
-    signindlg.cpp \
-    test.cpp
+    signindlg.cpp
 
 HEADERS += \
     Setgamedlg.h \
-    branchtest.h \
+    cgamedlg.h \
+    gamelogic.h \
     mainwindow.h \
     rankdlg.h \
-    signindlg.h \
-    test.h
+    signindlg.h
 
 FORMS += \
     Setgamedlg.ui \
+    cgamedlg.ui \
     mainwindow.ui \
     rankdlg.ui \
     signindlg.ui
@@ -36,3 +37,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resouce.qrc
