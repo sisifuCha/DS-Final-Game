@@ -1,0 +1,13 @@
+release/Setgamedlg.o
+release/cgamedlg.o
+release/gamelogic.o
+release/main.o
+release/mainwindow.o
+release/rankdlg.o
+release/signindlg.o
+release/qrc_resouce.o
+release/moc_Setgamedlg.o
+release/moc_cgamedlg.o
+release/moc_mainwindow.o
+release/moc_rankdlg.o
+release/moc_signindlg.o
