@@ -6,6 +6,9 @@
 #include <QLabel>
 #include "gamelogic.h"
 #include <QGraphicsPixmapItem>
+#include <QTimer>
+
+//版本更新于12.13 以作区分
 typedef struct{
     int category;//宝石种类
     QGraphicsPixmapItem* picItem;
@@ -22,7 +25,7 @@ class CGameDlg : public QDialog
     Q_OBJECT
 
 public:
-    explicit CGameDlg(QWidget *parent = nullptr,int dimension=8,int numOfStone=4);
+    explicit CGameDlg(QWidget *parent = nullptr,int dimension=8,int numOfStone=4,int gemtype=1,int backChoice=1);
     ~CGameDlg();
     GameLogic* gLogic;
 
@@ -35,6 +38,18 @@ public:
 
     //随机生成一个dimension维度矩阵，并做好点击事件
     QVector<QVector<Stone>> matrix;
+
+    //计时器
+    QTimer* timer;
+    int secCount;
+    void updateLabel();
+    int timeLimit;
+
+    //设置背景图片
+    int gemType;
+    int backChoice;
+    void iniPicRescource();//初始化的设置，避免构造函数写一堆if else
+    QPixmap backGround;
 
     /*——————————判断相邻，消子————————————*/
     //由stone1和stone2储存交换信息

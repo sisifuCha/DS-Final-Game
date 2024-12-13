@@ -3,7 +3,7 @@
 #include <QMouseEvent>
 
 
-CGameDlg::CGameDlg(QWidget *parent,int dimension,int numOfStone)
+CGameDlg::CGameDlg(QWidget *parent,int dimension,int numOfStone,int gemType,int backChoice)
     : QDialog(parent)
     , ui(new Ui::CGameDlg)
 {
@@ -11,18 +11,29 @@ CGameDlg::CGameDlg(QWidget *parent,int dimension,int numOfStone)
 
     this->dimension=dimension;
     this->numOfStone=numOfStone;
+    this->gemType=gemType;
+    this->backChoice=backChoice;
     //qDebug()<<"GameWidget:dimension"<<dimension<<"numOfStone"<<numOfStone;
     QGraphicsScene* graphicsScene=new QGraphicsScene(this);
     ui->graphicsView->setScene(graphicsScene);
+    ui->graphicsView->setStyleSheet("background: transparent");
+    ui->graphicsView->setFrameStyle(QFrame::NoFrame);
+    graphicsScene->setBackgroundBrush(Qt::transparent);
 
-    /*初始化自定义的宝石图片数组，这里先用本地的代替*/
-    stonePic.resize(6);
-    stonePic[0]=":/pics/resource/1.png";
-    stonePic[1]=":/pics/resource/2.png";
-    stonePic[2]=":/pics/resource/3.png";
-    stonePic[3]=":/pics/resource/4.png";
-    stonePic[4]=":/pics/resource/5.png";
-    stonePic[5]=":/pics/resource/6.png";
+
+    //计时器
+    timer=new QTimer(this);
+    secCount=0;
+    connect(timer, &QTimer::timeout, this, &CGameDlg::updateLabel);
+    timeLimit=10;
+    timer->start(1000);
+
+    /*初始化自定义的宝石图片数组*/
+    iniPicRescource();
+    QPalette palette;
+    backGround.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    palette.setBrush(QPalette::Window, backGround);
+    setPalette(palette);
 
     //qDebug()<<"GameWidget:测试点2";
     gLogic=new GameLogic(dimension,numOfStone);
@@ -41,7 +52,7 @@ CGameDlg::CGameDlg(QWidget *parent,int dimension,int numOfStone)
     for(int i=0;i<dimension;i++){
         matrix[i].resize(dimension);
         //qDebug()<<"GameWidget:测试点4";
-        qDebug()<<"matrix[i]大小"<<matrix[i].size();
+        //qDebug()<<"matrix[i]大小"<<matrix[i].size();
         for(int j=0;j<dimension;j++){
             //qDebug()<<"GameWidget:测试点5";
             matrix[i][j].category=temp[i][j];
@@ -76,6 +87,53 @@ CGameDlg::~CGameDlg()
 {
     delete ui;
 }
+
+//初始化宝石图片素材
+void CGameDlg::iniPicRescource(){
+    stonePic.resize(6);
+    if(gemType==0){
+        stonePic[0]=":/pics/resource/gem1.png";
+        stonePic[1]=":/pics/resource/gem2.png";
+        stonePic[2]=":/pics/resource/gem3.png";
+        stonePic[3]=":/pics/resource/gem4.png";
+        stonePic[4]=":/pics/resource/gem5.png";
+        stonePic[5]=":/pics/resource/gem6.png";
+    }else if(gemType==1){
+        stonePic[0]=":/pics/resource/gemBlue.png";
+        stonePic[1]=":/pics/resource/gemGreen.png";
+        stonePic[2]=":/pics/resource/gemOrange.png";
+        stonePic[3]=":/pics/resource/gemPurple.png";
+        stonePic[4]=":/pics/resource/gemRed.png";
+        stonePic[5]=":/pics/resource/gemWhite.png";
+    }else if(gemType==2){
+        stonePic[0]=":/pics/resource/mine1.png";
+        stonePic[1]=":/pics/resource/mine2.png";
+        stonePic[2]=":/pics/resource/mine3.png";
+        stonePic[3]=":/pics/resource/mine4.png";
+        stonePic[4]=":/pics/resource/mine5.png";
+        stonePic[5]=":/pics/resource/mine6.png";
+    }
+
+    if(backChoice==0){
+        backGround.load(":/pics/resource/back1.png");
+    }else if(backChoice==1){
+        backGround.load(":/pics/resource/back2.png");
+    }else if(backChoice==2){
+        backGround.load(":/pics/resource/back3.png");
+    }else if(backChoice==3){
+        backGround.load(":/pics/resource/back4.png");
+    }else if(backChoice==4){
+        backGround.load(":/pics/resource/back5.png");
+    }else if(backChoice==5){
+        backGround.load(":/pics/resource/back6.png");
+    }else if(backChoice==6){
+        backGround.load(":/pics/resource/back7.png");
+    }else{
+        backGround.load(":/pics/resource/back8.png");
+    }
+
+}
+
 void CGameDlg::mousePressEvent(QMouseEvent* event) {
     QPointF scenePos = ui->graphicsView->mapToScene(event->pos());
     scenePos.setX(scenePos.x()-30);//此处修改得到相对graphicsView的坐标，虽然我不知道为什么上一行出了问题
@@ -124,6 +182,7 @@ void CGameDlg::mousePressEvent(QMouseEvent* event) {
     }
 }
 
+//交换子调用的方法
 void CGameDlg::isClickedAround(int x, int y)
 {
     if(x+1<dimension&&matrix[x+1][y].isClicked){
@@ -185,8 +244,20 @@ void CGameDlg::putStone(int x, int y)
     ui->graphicsView->scene()->update();
 }
 
+
 void CGameDlg::on_SwapButton_clicked()//交换按钮
 {
 
 }
 
+//计时器方法
+void CGameDlg::updateLabel(){
+    //判断是否暂停 isPaused
+    if(secCount<timeLimit){
+        secCount++;
+        ui->timesLabel->setText(QString("剩余时间: %1 秒").arg(timeLimit-secCount));
+    }else{
+        timer->disconnect();
+        //展示失败信息
+    }
+}

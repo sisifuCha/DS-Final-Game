@@ -26,7 +26,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置游戏模式&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tabWidgetPage1">
     <property name="contextMenuPolicy">
@@ -212,28 +212,133 @@
     <attribute name="title">
      <string>背景图片设置</string>
     </attribute>
-    <widget class="QLineEdit" name="picFileChooseEdit">
+    <widget class="QComboBox" name="comboBox_gemtype">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>60</y>
-       <width>211</width>
-       <height>26</height>
+       <x>220</x>
+       <y>40</y>
+       <width>141</width>
+       <height>41</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>宝石1</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/gemOrange.png</normaloff>:/pics/resource/gemOrange.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>宝石2</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../1FinalProject/作业/大二上实训/cnamedlg等118个文件/gem1.png</normaloff>../1FinalProject/作业/大二上实训/cnamedlg等118个文件/gem1.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>宝石3</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/mine5.png</normaloff>:/pics/resource/mine5.png</iconset>
+      </property>
+     </item>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QComboBox" name="comboBox_background">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>60</y>
-       <width>86</width>
-       <height>26</height>
+       <x>40</x>
+       <y>40</y>
+       <width>141</width>
+       <height>41</height>
       </rect>
      </property>
-     <property name="text">
-      <string>选择背景图片</string>
-     </property>
+     <item>
+      <property name="text">
+       <string>背景1</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back1.png</normaloff>:/pics/resource/back1.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>背景2</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back2.png</normaloff>:/pics/resource/back2.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>背景3</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back3.png</normaloff>:/pics/resource/back3.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>背景4</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back4.png</normaloff>:/pics/resource/back4.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>背景5</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back5.png</normaloff>:/pics/resource/back5.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>背景6</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back6.png</normaloff>:/pics/resource/back6.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>背景7</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back7.png</normaloff>:/pics/resource/back7.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>背景8</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back8.png</normaloff>:/pics/resource/back8.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>背景9</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resouce.qrc">
+        <normaloff>:/pics/resource/back9.jpg</normaloff>:/pics/resource/back9.jpg</iconset>
+      </property>
+     </item>
     </widget>
    </widget>
   </widget>
@@ -264,6 +369,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resouce.qrc"/>
+ </resources>
  <connections/>
 </ui>

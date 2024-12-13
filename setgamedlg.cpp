@@ -37,13 +37,6 @@ void setGameDlg::on_volumeSlider_sliderMoved(int position)
    //滑动音量调，改变音量参数
 }
 
-
-void setGameDlg::on_pushButton_clicked()
-{
-     //打开文件，选择背景图片，地址传递到QMainwindow中
-}
-
-
 void setGameDlg::on_startButton_clicked()
 {
     //开始游戏界面
@@ -51,20 +44,22 @@ void setGameDlg::on_startButton_clicked()
     QStringList strList=dim.split("×");
     int dimension=strList[0].toInt();
     int numOfStone=ui->chooseStoneNumBox->currentText().toInt();
+    int gemType=ui->comboBox_gemtype->currentIndex();
+    int backChoice=ui->comboBox_background->currentIndex();
     //gameMode是成员变量
 
     int volume=ui->volumeSlider->value();//音量是最小为0最大为99的一个数值，表示比例
     bool useDefaultMusic=true;
     QString musicFileAdd=ui->musicFileChooseEdit->text();
-    QString picFileAdd=ui->picFileChooseEdit->text();
+    //QString picFileAdd=ui->picFileChooseEdit->text();
 
     //如果不相等，那么useuseDefaultMusic=false
     if(QString::compare(musicFileAdd,"",Qt::CaseSensitive)){
         useDefaultMusic=false;
     }
 
-    qDebug()<<"测试点1";
-    CGameDlg* cgameDlg=new CGameDlg(this,dimension,numOfStone);
+    //qDebug()<<"测试点1";
+    CGameDlg* cgameDlg=new CGameDlg(this,dimension,numOfStone,gemType,backChoice);
     cgameDlg->show();
 }
 

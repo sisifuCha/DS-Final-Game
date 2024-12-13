@@ -6,5 +6,37 @@
         <file>resource/4.png</file>
         <file>resource/5.png</file>
         <file>resource/6.png</file>
+        <file>resource/back1.png</file>
+        <file>resource/back2.png</file>
+        <file>resource/back3.png</file>
+        <file>resource/back4.png</file>
+        <file>resource/back5.png</file>
+        <file>resource/back6.png</file>
+        <file>resource/back7.png</file>
+        <file>resource/back8.png</file>
+        <file>resource/back9.jpg</file>
+        <file>resource/gem1.png</file>
+        <file>resource/gem2.png</file>
+        <file>resource/gem3.png</file>
+        <file>resource/gem4.png</file>
+        <file>resource/gem5.png</file>
+        <file>resource/gem6.png</file>
+        <file>resource/gem7.png</file>
+        <file>resource/gem8.png</file>
+        <file>resource/gemBlue.png</file>
+        <file>resource/gemGreen.png</file>
+        <file>resource/gemOrange.png</file>
+        <file>resource/gemPurple.png</file>
+        <file>resource/gemRed.png</file>
+        <file>resource/gemWhite.png</file>
+        <file>resource/gemYellow.png</file>
+        <file>resource/mine1.png</file>
+        <file>resource/mine2.png</file>
+        <file>resource/mine3.png</file>
+        <file>resource/mine4.png</file>
+        <file>resource/mine5.png</file>
+        <file>resource/mine6.png</file>
+        <file>resource/mine7.png</file>
+        <file>resource/mine8.png</file>
     </qresource>
 </RCC>

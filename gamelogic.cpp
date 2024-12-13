@@ -1,9 +1,12 @@
 #include "gamelogic.h"
 #include <QRandomGenerator>
 
-GameLogic::GameLogic(int dimension,int numOfStone) {
+GameLogic::GameLogic(int dimension,int numOfStone){
     this->dimension=dimension;
     this->numOfStone=numOfStone;
+
+    coutSec=0;
+    timer=new QTimer(nullptr);
 }
 
 QVector<QVector<int>> GameLogic::Inimatrix(){
@@ -17,6 +20,7 @@ QVector<QVector<int>> GameLogic::Inimatrix(){
     }
     return result;
 }
+
 /***
  * 要不干脆直接在cgamedlg里面写交换逻辑吧，这样比较顺一点，这个地方就不再更新了
 ***/

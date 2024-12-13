@@ -1,6 +1,7 @@
 #ifndef GAMELOGIC_H
 #define GAMELOGIC_H
 #include <QVector>
+#include <QTimer>
 
 class GameLogic
 {
@@ -11,6 +12,10 @@ public:
     int numOfStone;
 
     QVector<QVector<int>> Inimatrix();
+private:
+    int coutSec;
+    QTimer* timer;
+    void updateLabel();
 };
 
 #endif // GAMELOGIC_H
