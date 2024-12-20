@@ -7,14 +7,9 @@
 #include "gamelogic.h"
 #include <QGraphicsPixmapItem>
 #include <QTimer>
+#include <QPair>
 
-//版本更新于12.13 以作区分
-typedef struct{
-    int category;//宝石种类
-    QGraphicsPixmapItem* picItem;
-    bool isClicked;
-    bool isEmpty;
-}Stone;//
+//版本更新于12.19 以作区分
 
 namespace Ui {
 class CGameDlg;
@@ -52,18 +47,30 @@ public:
     QPixmap backGround;
 
     /*——————————判断相邻，消子————————————*/
-    //由stone1和stone2储存交换信息
-    QVector<Stone> swapStones;
+    //由left/rightChooseStone储存交换信息
+    Stone* leftChooseStone ;
+    Stone* rightChooseStone;
+    QPair<int,int> leftChoosePair;
+    QPair<int,int> rightChoosePair;
+    //显示选中信息
+    QGraphicsRectItem* lborderItem;//用来显示选中宝石的边框
+    QGraphicsRectItem* rborderItem;
+
+    //存放消去的子
+    QVector<Stone*> collection1;
+    QVector<Stone*> collection2;
+
     int ClickedTimes=0;
 protected:
     void mousePressEvent(QMouseEvent* event) override;
-    void isClickedAround(int x,int y);
-    void putStone(int x,int y);
+
 private slots:
     void on_SwapButton_clicked();
 
 private:
     Ui::CGameDlg *ui;
+    int lclicktime;
+    int rclicktime;
 };
 
 #endif // CGAMEDLG_H

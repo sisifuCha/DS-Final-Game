@@ -2,6 +2,7 @@
 #include "ui_Setgamedlg.h"
 #include "QButtonGroup"
 #include <QStringList>
+#include "gameLogic.h"
 #include "cgamedlg.h"
 
 setGameDlg::setGameDlg(QWidget *parent)
@@ -59,8 +60,8 @@ void setGameDlg::on_startButton_clicked()
     }
 
     //qDebug()<<"测试点1";
-    CGameDlg* cgameDlg=new CGameDlg(this,dimension,numOfStone,gemType,backChoice);
-    cgameDlg->show();
+    CGameDlg* gameDlg=new CGameDlg(this,dimension,numOfStone,gemType,backChoice);
+    gameDlg->show();
 }
 
 //选择默认模式
