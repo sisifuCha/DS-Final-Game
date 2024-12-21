@@ -1,8 +1,9 @@
 #include "cgamedlg.h"
 #include "ui_cgamedlg.h"
 #include <QMouseEvent>
-
-
+#include<QPropertyAnimation>
+#include<QGraphicsPixmapItem>
+#include<QGraphicsView>
 CGameDlg::CGameDlg(QWidget *parent,int dimension,int numOfStone,int gemType,int backChoice)
     : QDialog(parent)
     , ui(new Ui::CGameDlg)
@@ -148,7 +149,6 @@ void CGameDlg::iniPicRescource(){
         backGround.load(":/pics/resource/back8.png");
     }
 }
-
 //点击图标选中宝石
 void CGameDlg::mousePressEvent(QMouseEvent* event) {
     QRect viewGeometry = ui->graphicsView->geometry();
@@ -244,37 +244,54 @@ void CGameDlg::mousePressEvent(QMouseEvent* event) {
             rborderItem->setVisible(true);
             rborderItem->setPos(x*50,y*50);
             qDebug()<<"rightChooseStone"<<rightChoosePair.first<<rightChoosePair.second;
-            /*
-            if(rclicktime%2==0){
-                //qDebug()<<"上面";
-                rclicktime++;
-
-                rightChooseStone->isClicked=true;
-
-            }else{
-                //qDebug()<<"下面";
-                rclicktime--;
-                rborderItem->setVisible(false);
-                rightChooseStone->isClicked=false;
-            }*/
-
-             /*
-             if((*rightChooseStone).isClicked==false){
-                 (*rightChooseStone).isClicked=true;
-                 //显示“选中”效果
-                 QRectF picRect = matrix[x][y].picItem->boundingRect();
-                 rborderItem=new QGraphicsRectItem(picRect, nullptr);
-             }//用来双击消除框
-             else{
-                 (*rightChooseStone).isClicked=false;
-                 if(ui->graphicsView->scene() && lborderItem)
-                     ui->graphicsView->scene()->removeItem(lborderItem);
-                 rightChooseStone->category=0;rightChooseStone->picItem=nullptr;
-             }*/
         }
     }
 }
 
+void CGameDlg::StoneDrop()//将矩阵中所有的元素的图像作向下传递处理
+{
+    //针对每一列检测是否有下坠空间
+    QVector<int> CateList;
+    QVector<bool> ColHasEmpty;
+    int count=0;
+    ColHasEmpty.resize(dimension);
+    ColHasEmpty.fill(false);
+    for(int i=0;i<dimension;i++){
+        for(int j=dimension-1;j>=0;j--){
+            if(matrix[i][j].isEmpty) {
+            ColHasEmpty[i]=true;
+            qDebug()<<i<<"列有空";
+            break;
+            }
+        }
+    }
+    for(int i=0;i<dimension;i++){
+        if(ColHasEmpty[i]){
+        for(int j=dimension-1;j>=0;j--){
+            if(!matrix[i][j].isEmpty) {
+                CateList.push_back(matrix[i][j].category);
+                count++;
+            }
+        }
+        for(int j=dimension-1;j>=0;j--){
+           qDebug()<<"换图之前成功";
+            if(dimension-j<=count){
+            matrix[i][j].category=CateList[dimension-j+1];
+            QPixmap temp;
+            temp.load(stonePic[CateList[dimension-j+1]]);
+            matrix[i][j].picItem->setPixmap(temp);
+            matrix[i][j].picItem->setVisible(true);
+            matrix[i][j].isEmpty=false;
+            qDebug()<<"换图成功";
+            }
+            else{
+                matrix[i][j].picItem->setVisible(false);
+                matrix[i][j].isEmpty=true;
+            }
+        }
+    }
+}
+}
 
 
 //计时器方法
@@ -294,19 +311,6 @@ void CGameDlg::on_SwapButton_clicked()
     //交换子
     //获取当前“选中”子的状态
     qDebug()<<"按下swap";
-    /*
-    if(!leftChoosePair||!rightChooseStone){
-        //两个字有一个没选中，点击按钮清空所有选中状态
-        qDebug()<<"没选中子！！！！！！！！！！！！！！！";
-        leftChooseStone->isClicked=false;
-        rightChooseStone->isClicked=false;
-        lborderItem->setVisible(false);
-        rborderItem->setVisible(false);
-        rclicktime=0;
-        lclicktime=0;
-        qDebug()<<"CGameDlg::on_SwapButton_clicked:两个子都被清空了";
-        return;
-    }else{*/
         //_______1判断两个是否相邻
         bool isAdjacent=false;
         bool hasThreeCombo=false;
@@ -324,9 +328,9 @@ void CGameDlg::on_SwapButton_clicked()
         qDebug()<<"CGameDlg::on_SwapButton_clicked邻接判断"<<isAdjacent;
         qDebug()<<"CGameDlg::on_SwapButton_clicked三联判断"<<hasThreeCombo;
 
-        if(isAdjacent && hasThreeCombo){
+        if(isAdjacent && hasThreeCombo&&matrix[leftChoosePair.first][leftChoosePair.second].category!=matrix[rightChoosePair.first][rightChoosePair.second].category){
             //交换
-            gLogic->swapStone(&leftChoosePair,&rightChoosePair,&matrix,ui->graphicsView,collection1,collection2);
+            gLogic->swapStone(&leftChoosePair,&rightChoosePair,&matrix,ui->graphicsView,&collection1,&collection2);
             ui->graphicsView->scene()->update();
             QPair<int,int> tempP;
             tempP=leftChoosePair;
@@ -342,7 +346,21 @@ void CGameDlg::on_SwapButton_clicked()
             rborderItem->setVisible(false);
             rclicktime=0;
             lclicktime=0;
+            for(Stone* stone:collection1){
+                qDebug()<<"剔除";
+                stone->isEmpty=true;
+                stone->picItem->setVisible(false);
+            }
+            for(Stone* stone:collection2){
+                qDebug()<<"剔除";
+                stone->isEmpty=true;
+                stone->picItem->setVisible(false);
+            }
+            ui->graphicsView->scene()->update();
+            collection1.clear();
+            collection2.clear();
             qDebug()<<"CGameDlg::on_SwapButton_clicked 交换成功";
+            StoneDrop();
             return;
         }else{
             //重置选中信息

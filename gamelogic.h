@@ -10,7 +10,7 @@ struct Stone {
     QGraphicsPixmapItem* picItem;
     //QGraphicsRectItem* borderItem; // 边框项
     bool isClicked;
-    bool isEmpty;
+    bool isEmpty=false;
 
     int xLoc;
     int yLoc;//x,y都是索引。这个参数使得可以根据stone查询自己在矩阵的位置
@@ -70,7 +70,7 @@ public:
     //查看子是否三连子
     bool search(Stone*,Stone* ,QVector<QVector<Stone>>&matrix);
     //交换子
-    void swapStone(QPair<int,int>*,QPair<int,int>*,QVector<QVector<Stone>>* matix,QGraphicsView* view,QVector<Stone*>,QVector<Stone*>);
+    void swapStone(QPair<int,int>*,QPair<int,int>*,QVector<QVector<Stone>>* matix,QGraphicsView* view,QVector<Stone*>*,QVector<Stone*>*);
 private:
     int coutSec;//计时器
     QTimer* timer;

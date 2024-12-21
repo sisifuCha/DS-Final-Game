@@ -63,7 +63,7 @@ public:
     int ClickedTimes=0;
 protected:
     void mousePressEvent(QMouseEvent* event) override;
-
+    void StoneDrop();
 private slots:
     void on_SwapButton_clicked();
 
