@@ -79,60 +79,12 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/common/windows-vulkan.conf \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/common/g++-win32.conf \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/qconfig.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_archive.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_freetype.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_libjpeg.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_libpng.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_openxr_loader.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_yaml.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3danimation.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3danimation_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dcore.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dcore_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dextras.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dextras_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dinput.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dinput_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dlogic.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquick.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquick_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickextras.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickinput.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickrender.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickscene3d.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickscene3d_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3drender.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3drender_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_activeqt.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_activeqt_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_application_main_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_application_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_common_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_crypto_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_dbus_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_intent_client_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_intent_server_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_main_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_manager_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_monitor_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_package_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_plugininterfaces_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_application.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_application_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_systemui.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_systemui_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_shared_main_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_window_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_axbase_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_axcontainer.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_axcontainer_private.pri \
@@ -145,8 +97,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_charts_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_chartsqml.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_chartsqml_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_coap.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_coap_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_concurrent.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_core.pri \
@@ -159,8 +109,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_datavisualizationqml_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_dbus.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_declarativeopcua.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_declarativeopcua_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_designer.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_designer_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
@@ -185,10 +133,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_help_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_httpserver.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_httpserver_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_ifremoteobjects_helper.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_ifremoteobjects_helper_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_interfaceframework.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_interfaceframework_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_jpeg_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_jsonrpc_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_labsanimation.pri \
@@ -209,8 +153,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_linguist.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_location.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_location_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_mqtt.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_multimedia.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_multimedia_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_multimediaquick_private.pri \
@@ -223,8 +165,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_nfc.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_opcua.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_opcua_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_opengl.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_opengl_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_openglwidgets.pri \
@@ -256,7 +196,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlassetdownloader_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcompiler.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcompiler_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcompilerplus_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcore.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcore_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
@@ -300,10 +239,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dparticles.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dparticles_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dphysics.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dphysics_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3druntimerender.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3druntimerender_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri \
@@ -408,19 +343,8 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_vncserver.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_vncserver_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_vncserverquick_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webchannel.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webchannel_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webchannelquick.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webchannelquick_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_websockets.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webview.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webview_private.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webviewquick.pri \
-		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webviewquick_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_widgets.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_widgets_private.pri \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_xml.pri \
@@ -430,6 +354,7 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/mkspecs/features/qt_config.prf \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/win32-clang-g++/qmake.conf \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/features/exclusive_builds.prf \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/features/toolchain.prf \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/features/default_pre.prf \
@@ -461,7 +386,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 		../../../../6.8.1/llvm-mingw_64/lib/Qt6Network.prl \
 		../../../../6.8.1/llvm-mingw_64/lib/Qt6Core.prl \
 		../../../../6.8.1/llvm-mingw_64/lib/Qt6EntryPoint.prl \
-		.qmake.stash \
 		../../../../6.8.1/llvm-mingw_64/mkspecs/features/build_pass.prf \
 		../../resouce.qrc
 	$(QMAKE) -o Makefile ..\..\BejeweledGame.pro -spec win32-clang-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -474,60 +398,12 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/common/windows-vulkan.conf:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/common/g++-win32.conf:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/qconfig.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_archive.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_freetype.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_libjpeg.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_libpng.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_openxr_loader.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_ext_yaml.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3danimation.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3danimation_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dcore.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dcore_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dextras.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dextras_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dinput.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dinput_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dlogic.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dlogic_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquick.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquick_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickanimation.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickextras.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickextras_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickinput.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickinput_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickrender.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickrender_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickscene2d.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickscene3d.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3dquickscene3d_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3drender.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_3drender_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_activeqt.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_activeqt_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_application_main_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_application_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_common_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_crypto_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_dbus_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_intent_client_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_intent_server_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_main_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_manager_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_monitor_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_package_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_plugininterfaces_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_application.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_application_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_systemui.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_qml_systemui_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_shared_main_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_appman_window_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_axbase_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_axcontainer.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_axcontainer_private.pri:
@@ -540,8 +416,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_charts_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_chartsqml.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_chartsqml_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_coap.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_coap_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_concurrent.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_core.pri:
@@ -554,8 +428,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_datavisualizationqml_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_dbus.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_dbus_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_declarativeopcua.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_declarativeopcua_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_designer.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_designer_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
@@ -580,10 +452,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_help_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_httpserver.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_httpserver_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_ifremoteobjects_helper.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_ifremoteobjects_helper_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_interfaceframework.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_interfaceframework_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_jpeg_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_jsonrpc_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_labsanimation.pri:
@@ -604,8 +472,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_linguist.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_location.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_location_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_mqtt.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_mqtt_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_multimedia.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_multimedia_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_multimediaquick_private.pri:
@@ -618,8 +484,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_networkauth_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_nfc.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_nfc_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_opcua.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_opcua_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_opengl.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_opengl_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_openglwidgets.pri:
@@ -651,7 +515,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlassetdownloader_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcompiler.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcompiler_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcompilerplus_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcore.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmlcore_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_qmldebug_private.pri:
@@ -695,10 +558,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dparticles.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dparticles_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dphysics.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dphysics_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3druntimerender.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3druntimerender_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri:
@@ -803,19 +662,8 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_vncserver.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_vncserver_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_vncserverquick_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webchannel.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webchannel_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webchannelquick.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webchannelquick_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_websockets.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_websockets_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webview.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webview_private.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webviewquick.pri:
-../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_webviewquick_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_widgets.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_widgets_private.pri:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/modules/qt_lib_xml.pri:
@@ -825,6 +673,7 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/mkspecs/features/qt_config.prf:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/win32-clang-g++/qmake.conf:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/features/exclusive_builds.prf:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/features/toolchain.prf:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/features/default_pre.prf:
@@ -856,7 +705,6 @@ Makefile: ../../BejeweledGame.pro ../../../../6.8.1/llvm-mingw_64/mkspecs/featur
 ../../../../6.8.1/llvm-mingw_64/lib/Qt6Network.prl:
 ../../../../6.8.1/llvm-mingw_64/lib/Qt6Core.prl:
 ../../../../6.8.1/llvm-mingw_64/lib/Qt6EntryPoint.prl:
-.qmake.stash:
 ../../../../6.8.1/llvm-mingw_64/mkspecs/features/build_pass.prf:
 ../../resouce.qrc:
 qmake: FORCE

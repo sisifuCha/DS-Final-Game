@@ -236,20 +236,22 @@ bool GameLogic::search(Stone* stoneToSearch, Stone *objcetStone,  QVector<QVecto
 }
 
 //交换后消子
-void GameLogic::swapStone(QPair<int,int>* leStone,QPair<int,int>*riStone,QVector<QVector<Stone>>* matrix,QGraphicsView* view,QVector<Stone*> collection1,QVector<Stone*> collection2){
+void GameLogic::swapStone(QPair<int,int>* leStone,QPair<int,int>*riStone,QVector<QVector<Stone>>* matrix,QGraphicsView* view,QVector<Stone*>* collection1,QVector<Stone*>* collection2){
+    if((*matrix)[leStone->first][leStone->second].category!=(*matrix)[riStone->first][riStone->second].category){
     //交换lStone,rStone
     Stone temp;
     temp=(*matrix)[leStone->first][leStone->second];
     (*matrix)[leStone->first][leStone->second]=(*matrix)[riStone->first][riStone->second];
     (*matrix)[riStone->first][riStone->second]=temp;
-
-
-
-
-    //(*matrix)[x1][y1].xLoc = (*matrix)[x2][y2].xLoc;
-    //(*matrix)[x1][y1].yLoc = (*matrix)[x2][y2].yLoc;
-    //(*matrix)[x2][y2].xLoc = temp.xLoc;
-    //(*matrix)[x2][y2].yLoc = temp.yLoc;
+    //修改这个
+    int x1=leStone->first;
+    int y1=leStone->second;
+    int x2=riStone->first;
+    int y2=riStone->second;
+    (*matrix)[x2][y2].xLoc = (*matrix)[x1][y1].xLoc;
+    (*matrix)[x2][y2].yLoc = (*matrix)[x1][y1].yLoc;
+    (*matrix)[x1][y1].xLoc = temp.xLoc;
+    (*matrix)[x1][y1].yLoc = temp.yLoc;
     //QGraphicsPixmapItem* tempItem = (*matrix)[x1][y1].picItem;
     //(*matrix)[x1][y1].picItem = (*matrix)[x2][y2].picItem;
     //(*matrix)[x2][y2].picItem = tempItem;
@@ -262,44 +264,78 @@ void GameLogic::swapStone(QPair<int,int>* leStone,QPair<int,int>*riStone,QVector
     //————————————————————消子————————————————————
     /*分别检查交换后的两个位置，判断上下左右相邻的元素是否有同色*/
 
-    collectSame(&((*matrix)[leStone->first][leStone->second]),&collection1,matrix);
-    collectSame(&((*matrix)[riStone->first][riStone->second]),&collection2,matrix);
-    qDebug()<<"GameLogic::swapStone collectSame之后：collection1"<<collection1.size();
-    qDebug()<<"GameLogic::swapStone collectSame之后：collection2"<<collection2.size();
-
-    /*
-    for(Stone* eachStone:collection1){
-        eachStone->picItem->setVisible(false);
-    }*/
+    collectSame(&((*matrix)[leStone->first][leStone->second]),collection1,matrix);
+    collectSame(&((*matrix)[riStone->first][riStone->second]),collection2,matrix);
+    qDebug()<<"GameLogic::swapStone collectSame之后：collection1"<<collection1->size();
+    qDebug()<<"GameLogic::swapStone collectSame之后：collection2"<<collection2->size();
+}
 }
 
 //
 void  GameLogic::collectSame(Stone* currentStone,QVector<Stone*>* collection,QVector<QVector<Stone>>* matrix){
+    int xcount=1;
+    int ycount=1;
     int targetCategory=currentStone->category;
+    qDebug()<<"待删除的宝石种类是"<<targetCategory;
     int x=currentStone->xLoc;
     int y=currentStone->yLoc;
+    qDebug()<<"被选中的宝石坐标是"<<x<<y;
 
+    collection->push_back(&(*matrix)[x][y]);
 
     while(x>=1&&x<dimension&&(*matrix)[x-1][y].category==targetCategory){
+        qDebug()<<"向左搜索";
         collection->push_back(&(*matrix)[x-1][y]);
+        qDebug()<<x-1<<" "<<y<<"被添加到待删集合里";
         x--;
+        xcount++;
     }
-
     x=currentStone->xLoc;
     while(x>=0&&x<dimension-1&&(*matrix)[x+1][y].category==targetCategory){
+        qDebug()<<"向右搜索";
         collection->push_back(&(*matrix)[x+1][y]);
+        qDebug()<<x+1<<" "<<y<<"被添加到待删集合里";
         x++;
+        xcount++;
     }
 
     x=currentStone->xLoc;
+
+    if(!(xcount>=3)){
+        qDebug()<<"横向不足三个";
+        collection->clear();
+        collection->push_back(&(*matrix)[x][y]);
+    }
     while(y>=1&&y<dimension&&(*matrix)[x][y-1].category==targetCategory){
+        qDebug()<<"向上搜索";
         collection->push_back(&(*matrix)[x][y-1]);
+        qDebug()<<x<<" "<<y-1<<"被添加到待删集合里";
         y--;
+        ycount++;
     }
 
     y=currentStone->yLoc;
     while(y>=0&&y<dimension-1&&(*matrix)[x][y+1].category==targetCategory){
+        qDebug()<<"向下搜索";
         collection->push_back(&(*matrix)[x][y+1]);
+        qDebug()<<x<<" "<<y+1<<"被添加到待删集合里";
         y++;
+        ycount++;
+    }
+    if(ycount<3&&y!=1){
+        qDebug()<<"纵向不足三个";
+        for(int i=1;i<ycount;i++){
+            collection->pop_back();
+        }
+    }
+    if(xcount>=3||ycount>=3) {
+        qDebug()<<"添加完毕，待删除元素如下";
+        for(int i=0;i<collection->size();i++){
+            qDebug()<<(*collection)[i]->xLoc<<(*collection)[i]->yLoc;
+        }
+    }
+    else {
+        collection->clear();
+        qDebug()<<"无可删除元素";
     }
 }

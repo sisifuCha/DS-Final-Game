@@ -19,6 +19,7 @@ SOURCES += \
     signindlg.cpp
 
 HEADERS += \
+    ImageObject.h \
     Setgamedlg.h \
     cgamedlg.h \
     gamelogic.h \
